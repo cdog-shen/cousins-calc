@@ -86,8 +86,10 @@
         <tr>
             <th>原价</th>
             <th>85%</th>
+            <th>80%</th>
         </tr>
         <tr>
+            <td><span></span></td>
             <td><span></span></td>
             <td><span></span></td>
         </tr>
@@ -150,17 +152,19 @@
             return totalPrice;
         }
 
-        function calculate85() {
-            var result100 = calculate100();
-            var total85 = Math.ceil(result100 * 0.85); // 计算85%并且向上取整
-            return total85;
-        }
+        // function calculate85() {
+        //     var result100 = calculate100();
+        //     var total85 = Math.ceil(result100 * 0.85); // 计算85%并且向上取整
+        //     return total85;
+        // }
 
         function manualCalculate() {
             var result100 = calculate100();
-            var result85 = calculate85();
-            document.querySelector('td:nth-last-child(1) span').innerText = result85;
-            document.querySelector('td:nth-last-child(2) span').innerText = result100;
+            var result85 = Math.ceil(result100 * 0.85);
+            var result80 = Math.ceil(result100 * 0.80);
+            document.querySelector('td:nth-last-child(1) span').innerText = result80;
+            document.querySelector('td:nth-last-child(2) span').innerText = result85;
+            document.querySelector('td:nth-last-child(3) span').innerText = result100;
         }
 
     </script>
