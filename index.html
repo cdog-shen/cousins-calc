@@ -87,11 +87,13 @@
             <th>原价</th>
             <th>85%</th>
             <th>80%</th>
+            <th>70%</th>
         </tr>
         <tr>
-            <td><span></span></td>
-            <td><span></span></td>
-            <td><span></span></td>
+            <td><span id="ori"></span></td>
+            <td><span id="discount85"></span></td>
+            <td><span id="discount80"></span></td>
+            <td><span id="discount70"></span></td>
         </tr>
     </table>
 
@@ -162,9 +164,11 @@
             var result100 = calculate100();
             var result85 = Math.ceil(result100 * 0.85);
             var result80 = Math.ceil(result100 * 0.80);
-            document.querySelector('td:nth-last-child(1) span').innerText = result80;
-            document.querySelector('td:nth-last-child(2) span').innerText = result85;
-            document.querySelector('td:nth-last-child(3) span').innerText = result100;
+            var result70 = Math.ceil(result100 * 0.70);
+            document.getElementById('ori').innerText = result100;
+            document.getElementById('discount85').innerText = result85;
+            document.getElementById('discount80').innerText = result80;
+            document.getElementById('discount70').innerText = result70;
         }
 
     </script>
